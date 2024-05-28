@@ -1,14 +1,12 @@
 import { BookService } from "./book.service";
 import { Book } from "./book.model";
 import { Response } from 'express';
-import { Get, Body, Post, Param, Delete, Put, Controller, HttpException, HttpStatus,Res } from "@nestjs/common";
+import { Get, Body, Post, Param, Delete, Put, Controller, Res } from "@nestjs/common";
 
 @Controller('api/book')
 export class BookController{
 
     constructor(private readonly bookService: BookService){}
-
-
 
     @Get()
     async getAllBooks(@Res() res: Response): Promise<any> {
